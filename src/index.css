@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* My PDM Tutor Design System
+   Brand Colors: Blue, Dark Blue, Silver Gray, Black, White
+   Developer-grade aesthetic inspired by VS Code, GitHub, Linear
+*/
+
+@layer base {
+  :root {
+    /* Light Mode - Clean & Professional */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary Blue - Main brand color */
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft blue tint */
+    --secondary: 214 32% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted - Silver gray tones */
+    --muted: 214 20% 94%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Highlight blue */
+    --accent: 217 91% 95%;
+    --accent-foreground: 217 91% 40%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Coin gold */
+    --coin: 45 93% 47%;
+    --coin-foreground: 45 93% 20%;
+
+    /* Borders & inputs */
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 217 91% 50%;
+
+    --radius: 0.625rem;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 214 20% 90%;
+    --sidebar-primary: 217 91% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 214 20% 90%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 217 91% 55%;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 50%) 0%, hsl(222, 47%, 25%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(217, 91%, 55%) 0%, hsl(222, 60%, 35%) 50%, hsl(222, 47%, 15%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(214, 20%, 98%) 100%);
+    --gradient-coin: linear-gradient(135deg, hsl(45, 93%, 55%) 0%, hsl(38, 92%, 50%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-glow: 0 0 20px hsl(217 91% 50% / 0.15);
+  }
+
+  .dark {
+    /* Dark Mode - Premium Developer-Grade */
+    --background: 222 47% 5%;
+    --foreground: 214 20% 94%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 214 20% 94%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 214 20% 94%;
+
+    /* Primary Blue - Brighter in dark mode */
+    --primary: 217 91% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 214 20% 94%;
+
+    /* Muted - Darker grays */
+    --muted: 222 47% 12%;
+    --muted-foreground: 215 16% 60%;
+
+    /* Accent */
+    --accent: 217 91% 20%;
+    --accent-foreground: 217 91% 70%;
+
+    /* Status colors */
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    /* Coin gold */
+    --coin: 45 93% 50%;
+    --coin-foreground: 45 93% 10%;
+
+    /* Borders & inputs */
+    --border: 222 47% 18%;
+    --input: 222 47% 15%;
+    --ring: 217 91% 55%;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 4%;
+    --sidebar-foreground: 214 20% 90%;
+    --sidebar-primary: 217 91% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 10%;
+    --sidebar-accent-foreground: 214 20% 90%;
+    --sidebar-border: 222 47% 12%;
+    --sidebar-ring: 217 91% 55%;
+
+    /* Custom gradients - Dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 55%) 0%, hsl(222, 47%, 35%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222, 47%, 12%) 0%, hsl(222, 60%, 8%) 50%, hsl(222, 47%, 4%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222, 47%, 10%) 0%, hsl(222, 47%, 7%) 100%);
+    --gradient-coin: linear-gradient(135deg, hsl(45, 93%, 55%) 0%, hsl(38, 92%, 45%) 100%);
+    
+    /* Shadows - Dark mode */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -2px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4), 0 4px 6px -4px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 30px hsl(217 91% 55% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Smooth theme transitions */
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  /* Brand logo styles */
+  .logo-text {
+    @apply font-bold tracking-tight;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Coin display */
+  .coin-badge {
+    background: var(--gradient-coin);
+    @apply text-coin-foreground font-semibold px-3 py-1.5 rounded-full shadow-md;
+  }
+
+  /* Card with glow effect */
+  .card-glow {
+    @apply relative overflow-hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-glow::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--primary) / 0.1), transparent 50%);
+  }
+
+  .card-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Progress bar with gradient */
+  .progress-gradient {
+    background: var(--gradient-primary);
+  }
+
+  /* Locked course overlay */
+  .locked-overlay {
+    @apply absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center;
+  }
+
+  /* Mascot container */
+  .mascot-container {
+    @apply relative;
+  }
+
+  .mascot-glow {
+    @apply absolute inset-0 blur-2xl opacity-30;
+    background: var(--gradient-primary);
+  }
+
+  /* Developer-style code blocks */
+  .code-block {
+    @apply bg-muted rounded-lg p-4 font-mono text-sm;
+  }
+
+  /* Hero section gradient background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Navbar glass effect */
+  .navbar-glass {
+    @apply bg-background/80 backdrop-blur-md border-b border-border;
+  }
+
+  /* Sidebar styles */
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-all duration-200;
+  }
+
+  .sidebar-item-active {
+    @apply bg-sidebar-accent text-sidebar-primary font-medium;
+  }
+
+  /* Quiz option styles */
+  .quiz-option {
+    @apply border-2 border-border rounded-lg p-4 cursor-pointer transition-all duration-200 hover:border-primary/50 hover:bg-accent/50;
+  }
+
+  .quiz-option-selected {
+    @apply border-primary bg-primary/10;
+  }
+
+  .quiz-option-correct {
+    @apply border-success bg-success/10;
+  }
+
+  .quiz-option-incorrect {
+    @apply border-destructive bg-destructive/10;
+  }
+
+  /* Table styles for admin */
+  .admin-table {
+    @apply w-full text-sm;
+  }
+
+  .admin-table th {
+    @apply text-left font-medium text-muted-foreground px-4 py-3 border-b border-border;
+  }
+
+  .admin-table td {
+    @apply px-4 py-3 border-b border-border;
+  }
+
+  .admin-table tr:hover td {
+    @apply bg-muted/50;
+  }
+}
+
+@layer utilities {
+  /* Text gradient utility */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effect on hover */
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Animate pulse for notifications */
+  .pulse-dot {
+    @apply relative;
+  }
+
+  .pulse-dot::after {
+    content: '';
+    @apply absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full;
+    animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-ring {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Smooth scroll */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom scrollbar for dark theme */
+  .scrollbar-custom::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
